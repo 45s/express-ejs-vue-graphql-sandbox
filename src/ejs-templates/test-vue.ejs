@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs');%>
+  <body>
+    <div class="container">
+      <%- include('./partials/navbar.ejs');%>
+      <h1><%=title%></h1>
+
+      <div id="app-vue">
+        <div
+          class="spinner-border text-primary"
+          role="status"
+          v-if="servers.length === 0"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+        <ul class="list-group" v-else>
+          <li class="list-group-item" v-for="server in servers">
+            {{ server.name }}
+            <strong>{{ server.status }}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <%- include('./partials/scripts.ejs');%>
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- "/" for static folder  -->
+    <script src="/app-vue.js"></script>
+  </body>
+</html>

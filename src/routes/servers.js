@@ -1,16 +1,15 @@
 import { Router } from 'express'
 
-import { api } from '../config/api.js'
-
+import { api } from '../config/index.js'
 import { getAll, create, remove } from '../controllers/servers.js'
 
-export const routerServer = Router()
+export const routerServers = Router()
 
 const { servers } = api
 
-routerServer.get(servers, getAll)
-routerServer.post(servers, create)
-routerServer.delete(`${servers}/:id`, remove)
+routerServers.get(servers, getAll)
+routerServers.post(servers, create)
+routerServers.delete(`${servers}/:id`, remove)
 
-// routerServer.put(`${apiUrl}/:id`, put);
-// routerServer.patch(`${apiUrl}/:id`, patch);
+// routerServers.put(`${apiUrl}/:id`, put);
+// routerServers.patch(`${apiUrl}/:id`, patch);

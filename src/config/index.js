@@ -1,3 +1,3 @@
 export const appConfig = {
-  staticFolderName: "static-pages",
-};
+  staticFolderName: 'static-pages',
+}
